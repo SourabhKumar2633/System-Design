@@ -126,7 +126,42 @@ the Least Time algorithm, if so configured).
  - An example of this can be seen with Cisco, which has developed a technique that uses a NAT overload to map several private IP addresses to a single public IP address.
  - Conversely, a static NAT, also common in large organizations, provides a 1:1 mapping between an internal IP address and a public network IP address.
 
- ### 
+ ### NAT64 
+ - NAT64 is an IPv6 transition technology that supports the translation of an IPv6 network address into an IPv4 address.
+ - There are stateless and stateful versions of NAT64:
+   - *Stateless NAT64*: This mechanism is stateless because it doesn't maintain any bindings or session state while performing address translation, and it supports both IPv6-initiated and IPv4-initiated communications. (A binding is a one-to-one association between a private IP address and its translated public IP address.)
+   - *Stateful NAT64*: This mechanism is stateful because it creates or modifies session state or bindings while performing address translation. Stateful NAT64 supports both IPv6-initiated and IPv4-initiated communications using static or manual mappings.
+
+ ### What are application-level gateways (ALGs)?
+ - Application-level gateways are applications that translate IP address information inside the payload of an application packet. They can be used to perform NAT and firewall actions, depending on configurations.
+ - ALGs that are configured to perform NAT and firewall actions can:
+   - Allow client applications to use dynamic TCP or UDP ports to communicate with a server app
+   - Recognize application-specific commands and offer granular security control over those commands
+   - Synchronize multiple streams or sessions of data between two hosts that are exchanging data
+   - Translate network-layer address information available in an application's payload
+ ### ALG: A helper for NAT
+ - Not all internet protocols carry source and destination IP addresses in an application data stream. Examples include HTTP, Network Time Protocol (NTP), remote login (rlogin), and remote copy (rcp). NAT can perform translation services on these types of protocols.
+ - However, NAT needs ALG support when it encounters specific protocols that embed IP address information within the payload. In fact, NAT requires various ALGs to handle application data stream (Layer 7) protocol-specific services, such as translating embedded IP addresses and port numbers in the packet payload and extracting new connection and session information from control channels.
+ - ALG also supports stateful NAT translation. For example, Session Initiation Protocol (SIP) files must be handled with special care when translated because they have control and data communication components associated with the same user transaction. These files can signal to routers when to set up voice and multimedia over IP networks.
+ - An ALG needs to be used with NAT to translate the embedded protocol messages and keep the control and data components bound together.
+### Carrier-grade NAT
+- Carrier-grade network address translation, known also as CGN or CGNAT, translates IP addresses at a much larger scale, often handling tens of millions NAT translations. Service providers and companies with large-scale networks rely on CGN for internet and cloud connectivity. As a result, CGN should be supported by a capable platform that can serve high-scale demands.
+### NAT444 for service providers
+- Service providers using CGN may also employ a NAT444 architecture as a strategy to manage a waning IPv4 supply.
+- With NAT444, customer connections to internet services and the cloud can pass through three different IPv4 addressing domains: the customer's private network, the carrier's private network, and the public internet.
+### NAT High Availability (HA)
+- *Stateless and stateful NAT HA*
+  - When a standby NAT router or edge platform is unaware of the translations that an active NAT router or edge platform performs, it's called stateless redundancy.
+  - Stateless NAT HA provides fast switchover between active and standby routers due to faults that may occur in any part of the network. With stateless HA, the applications traffic has to re-create NAT translation in a new active router.
+  - With stateful NAT HA, a standby router or edge platform knows all the translations that the active NAT router is performing. If an adverse event impacts the active router and traffic must switch to the standby router, then the standby router won't need to re-create the translation. This enables sessions to continue sending traffic from new active router.
+### High-speed logging
+- Today's NAT technology can support high-speed logging (HSL) for multiple destinations. And leading NAT solutions can support tens of millions of translations on one data plane. This type of speed and volume for message logging isn't possible using the traditional syslog logging standard.
+- HSL, when configured, can enable NAT to provide a log of the packets flowing through routing devices to an external collector. Records are sent for each binding created by NAT and also when sessions are created or destroyed. The session records include necessary tracking information such as source IP address, destination IP address, source port, destination port, and protocol information, and more importantly, event time and type.
+- NAT high-speed logging records can be invaluable documentation for investigations of illegal or other malicious or problematic activity on a network
+### How can NAT help transition to IPv6?
+- While IPv6 offers a large number of IP address space to fulfill increasing host demands in today's networks, chances are you need IPv6 and IPv4 addresses to coexist in your network.
+- NAT can help support this coexistence and transition, allowing IPv6-only devices to communicate with IPv4-only devices and vice versa. NAT allows organizations to connect IPv6 and IPv4 networks using NAT64 translations.
+- As a networking service, it's important that NAT is supported with underlay performance.
 
 
 
