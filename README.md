@@ -8,3 +8,18 @@
     
   ### 1. DAS (Directly Attached Storage)
    - This is as simple as it sounds DAS (Directly Attached Storage) device. A simple example of DAS is an external hard drive connected through a Universal Serial Bus (USB) cable. When we discuss about storage
+
+## NETWORKING
+ ### LOAD BALANCER
+ - Load balancing refers to efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
+ - A load balancer acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures that no one server is overworked, which could degrade performance.
+ - If a single server goes down, the load balancer redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer automatically starts to send requests to it.
+ -  A load balancer performs the following functions:
+   - Distributes client requests or network load efficiently across multiple servers
+   - Ensures high availability and reliability by sending requests only to servers that are online
+   - Provides the flexibility to add or subtract servers as demand dictates
+![image](https://github.com/SourabhKumar2633/System-Design/assets/146738264/b4b1ce45-84bc-413b-9779-656bf0b27391)
+
+### Load Balancing Algorithms
+- Different load balancing algorithms provide different benefits; the choice of load balancing method depends on your needs:
+
