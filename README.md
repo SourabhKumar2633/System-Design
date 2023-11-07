@@ -94,15 +94,39 @@ the Least Time algorithm, if so configured).
   - 9.Shared Proxy
      - Shared proxies are used by more than one user at once. They give you access to an IP address that may be shared by other people, and then you can surf the internet while appearing to browse from a location of your choice.
      - Shared proxies are a solid option for people who do not have a lot of money to spend and do not necessarily need a fast connection. The main advantage of a shared proxy is its low cost. Because they are shared by others, you may get blamed for someone else’s bad decisions, which could get you banned from a site.
-    - 10.SSL Proxy
+ - 10.SSL Proxy
        - A secure sockets layer (SSL) proxy provides decryption between the client and the server. As the data is encrypted in both directions, the proxy hides its existence from both the client and the server.
        - These proxies are best suited for organizations that need enhanced protection against threats that the SSL protocol reveals and stops. Because Google prefers servers that use SSL, an SSL proxy, when used in connection with a website, may help its search engine ranking. On the downside, content encrypted on an SSL proxy cannot be cached, so when visiting websites multiple times, you may experience slower performance than you would otherwise.
-    - 11.Rotating Proxy
+  - 11.Rotating Proxy
        - A rotating proxy assigns a different IP address to each user that connects to it. As users connect, they are given an address that is unique from the device that connected before it.
        - Rotating proxies are ideal for users who need to do a lot of high-volume, continuous web scraping. They allow you to return to the same website again and again anonymously. However, you have to be careful when choosing rotating proxy services. Some of them contain public or shared proxies that could expose your data.
-     - 12.Reverse Proxy
+ - 12.Reverse Proxy
        - Unlike a forward proxy, which sits in front of clients, a reverse proxy is positioned in front of web servers and forwards requests from a browser to the web servers. It works by intercepting requests from the user at the network edge of the web server. It then sends the requests to and receives replies from the origin server.
        - Reverse proxies are a strong option for popular websites that need to balance the load of many incoming requests. They can help an organization reduce bandwidth load because they act like another web server managing incoming requests. The downside is reverse proxies can potentially expose the HTTP server architecture if an attacker is able to penetrate it. This means network administrators may have to beef up or reposition their firewall if they are using a reverse proxy.
+
+
+## NAT (Network Address Translation)
+- A Network Address Translation (NAT) is the process of mapping an internet protocol (IP) address to another by changing the header of IP packets while in transit via a router. This helps to improve security and decrease the number of IP addresses an organization needs.
+- A NAT works by selecting gateways that sit between two local networks: the internal network, and the outside network. Systems on the inside network are typically assigned IP addresses that cannot be routed to external networks (e.g., networks in the 10.0.0.0/8 block).
+- A few externally valid IP addresses are assigned to the gateway. The gateway makes outbound traffic from an inside system appear to be coming from one of the valid external addresses. It takes incoming traffic aimed at a valid external address and sends it to the correct internal system.
+- This helps ensure security. Because each outgoing or incoming request must go through a translation process that offers the opportunity to qualify or authenticate incoming streams and match them to outgoing requests
+- For Example- NAT conserves the number of globally valid IP addresses a company needs and -- in combination with Classless Inter-Domain Routing (CIDR) -- has done a lot to extend the useful life of IPv4 as a result. NAT is described in general terms in IETF RFC 1631.
+  ### What are the various types of NAT techniques?
+  - The NAT mechanism ("natting") is a router feature, and is often part of a corporate firewall. NAT gateways can map IP addresses in several ways:
+    - from a local IP address to one global IP address statically;
+    - hiding an entire IP address space comprised of private IP addresses behind a single IP address;
+    - to a large private network using a single public IP address using translation tables;
+    - from a local IP address plus a particular TCP port to a global address or a pool of public IP addresses; and
+    - from a global IP address to any of a pool of local IP addresses on a round-robin basis.
+  - In some cases, network administrators define policies that allow the gateway device to assign mappings based on the intended destination ("pick this external address for communications to partner A's area network; pick that external address for communications to partner B's").
+  - Policies can also be used on the protocols being used ("assign out of this pool for HTTP traffic, that pool for HTTPS") or on other factors.
+  -  A newer way to use NAT focuses on translating an ISP provider's IPv4 addresses to IPv6, and vice versa. This provides integration of IPv4 infrastructure and end nodes into IPv6 environments, and allows IPv6 services to interact with IPv4 systems.
+ ### What is the difference between dynamic NAT (DNAT) and static NAT (SNAT)?
+ - A dynamic NAT is common in larger organizations with complex internal networks. It uses several available IP addresses during the translation.
+ - An example of this can be seen with Cisco, which has developed a technique that uses a NAT overload to map several private IP addresses to a single public IP address.
+ - Conversely, a static NAT, also common in large organizations, provides a 1:1 mapping between an internal IP address and a public network IP address.
+
+ ### 
 
 
 
