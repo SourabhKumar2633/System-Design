@@ -165,7 +165,21 @@ the Least Time algorithm, if so configured).
 
 
 ## Public & Private DNS
+-*Public DNS*: Public DNS servers are available to anyone on the internet and are provided by companies such as Google, OpenDNS, and Cloudflare. They can be used to resolve domain names to IP addresses for any website on the internet. Public DNS servers are typically faster and more reliable than those provided by ISPs, and they often offer additional features such as security and ad-blocking.
+-*Private DNS*: Private DNS servers, on the other hand, are used within a specific organization or network. They are typically used in enterprise or home networks to resolve domain names internally, rather than on the public internet. For example, a company might use a private DNS server to map internal hostnames to IP addresses, or a user might set up a private DNS server on their home network to block ads and improve privacy.
+## VPN
+-### What should a good VPN do?
+ -*Encryption of your IP address*: The primary job of a VPN is to hide your IP address from your ISP and other third parties. This allows you to send and receive information online without the risk of anyone but you and the VPN provider seeing it.
+ -*Encryption of protocols*: A VPN should also prevent you from leaving traces, for example, in the form of your internet history, search history and cookies. The encryption of cookies is especially important because it prevents third parties from gaining access to confidential information such as personal data, financial information and other content on website
+ -*Kill switch*: If your VPN connection is suddenly interrupted, your secure connection will also be interrupted. A good VPN can detect this sudden downtime and terminate preselected programs, reducing the likelihood that data is compromised.
+ -*Two-factor authentication*: By using a variety of authentication methods, a strong VPN checks everyone who tries to log in. For example, you might be prompted to enter a password, after which a code is sent to your mobile device. This makes it difficult for uninvited third parties to access your secure connection.
 
-
-
-  
+### Types of VPN 
+  - SSL VPN
+    - The prerequisite is usually an HTML-5-capable browser, which is used to call up the company's login page. HTML-5 capable browsers are available for virtually any operating system. Access is guarded with a username and password.
+  - Site-to-site VPN
+    -A site-to-site VPN is essentially a private network designed to hide private intranets and allow users of these secure networks to access each other's resources.
+    - A site-to-site VPN is useful if you have multiple locations in your company, each with its own local area network (LAN) connected to the WAN (Wide Area Network). Site-to-site VPNs are also useful if you have two separate intranets between which you want to send files without users from one intranet explicitly accessing the other.
+  - Client to server VPN
+    - This involves the user not being connected to the internet via his own ISP, but establishing a direct connection through his/her VPN provider. This essentially shortens the tunnel phase of the VPN journey. Instead of using the VPN to create an encryption tunnel to disguise the existing internet connection, the VPN can automatically encrypt the data before it is made available to the user.
+    - This is an increasingly common form of VPN, which is particularly useful for providers of insecure public WLAN. It prevents third parties from accessing and compromising the network connection and encrypts data all the way to the provider. It also prevents ISPs from accessing data that, for whatever reason, remains unencrypted and bypasses any restrictions on the user's internet access (for instance, if the government of that country restricts internet access).
