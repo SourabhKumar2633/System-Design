@@ -185,4 +185,7 @@ the Least Time algorithm, if so configured).
     - This is an increasingly common form of VPN, which is particularly useful for providers of insecure public WLAN. It prevents third parties from accessing and compromising the network connection and encrypts data all the way to the provider. It also prevents ISPs from accessing data that, for whatever reason, remains unencrypted and bypasses any restrictions on the user's internet access (for instance, if the government of that country restricts internet access).
 
 ## IPv4 & IPv6
--
+- Internet Protocol version 4 (IPv4) is the fourth version of the Internet Protocol (IP). It is one of the core protocols of standards-based internetworking methods in the Internet and other packet-switched networks. IPv4 was the first version deployed for production on SATNET in 1982 and on the ARPANET in January 1983. It is still used to route most Internet traffic today,[1] even with the ongoing deployment of Internet Protocol version 6 (IPv6),[2] its successor.
+- https://en.m.wikipedia.org/wiki/File:IPv4_Packet-en.svg
+
+- IPv4 uses a 32-bit address space which provides 4,294,967,296 (232) unique addresses, but large blocks are reserved for special networking purposes
